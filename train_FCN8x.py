@@ -323,6 +323,10 @@ with sess:
 
             summary_string_writer.add_summary(summary_string, i)
 
+            if gs % 10 != 0 and gs >= 10:
+                logging.debug("gs error {0} ".format(gs))
+                gs -= gs % 10
+
             if gs % 100 == 0:
                 save_path = saver.save(sess, os.path.join(log_folder, "model.ckpt"), global_step=gs)
                 logging.debug("Model saved in file: %s" % save_path)
