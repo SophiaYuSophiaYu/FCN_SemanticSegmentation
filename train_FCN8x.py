@@ -19,9 +19,6 @@ import logging
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(filename)s:%(lineno)d - %(message)s', level=logging.DEBUG)
 
-# linux使用GPU时，控制使用的显卡，为空则不使用GPU
-os.environ["CUDA_VISIBLE_DEVICES"] = '1'
-
 def parse_args(check=True):
     parser = argparse.ArgumentParser()
     parser.add_argument('--checkpoint_path', type=str)
