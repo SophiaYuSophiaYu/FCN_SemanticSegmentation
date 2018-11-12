@@ -111,26 +111,23 @@ upsampled_logits = tf.nn.conv2d_transpose(logits, upsample_filter_tensor_x2,
 
 upsampled_logits = upsampled_logits + aux_logits_16s
 
-upsample_filter_np_x4 = bilinear_upsample_weights(2,
-                                                   number_of_classes)
-
-upsample_filter_tensor_x4 = tf.Variable(upsample_filter_np_x4, name='vgg_16/fc8/t_conv_x4')
-upsampled_logits = tf.nn.conv2d_transpose(upsampled_logits, upsample_filter_tensor_x4,
-                                          output_shape=tf.shape(upsampled_logits),
-                                          strides=[1, 2, 2, 1],
-                                          padding='SAME')
-
-
-pool3_feature = end_points['vgg_16/pool3']
+#这里是添加的代码，fcn-8x
+pool5_feature = end_points['vgg_16/pool3']
 with tf.variable_scope('vgg_16/fc8'):
-    aux_logits_8s = slim.conv2d(pool3_feature, number_of_classes, [1, 1],
+    aux_logits_8s = slim.conv2d(pool5_feature, number_of_classes, [1, 1],
                                  activation_fn=None,
                                  weights_initializer=tf.zeros_initializer,
                                  scope='conv_pool3')
 
-upsampled_logits = upsampled_logits + aux_logits_8s
-# Perform the upsampling
+upsampled_logits = tf.nn.conv2d_transpose(upsampled_logits, upsample_filter_tensor_x2,
+                                          output_shape=tf.shape(aux_logits_8s),
+                                          strides=[1, 2, 2, 1],
+                                          padding='SAME')
 
+upsampled_logits = upsampled_logits + aux_logits_8s
+
+# Perform the upsampling
+# 进行上采样
 upsample_filter_np_x8 = bilinear_upsample_weights(upsample_factor,
                                                    number_of_classes)
 
