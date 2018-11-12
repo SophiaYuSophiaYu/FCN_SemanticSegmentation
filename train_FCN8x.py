@@ -19,6 +19,8 @@ import logging
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(filename)s:%(lineno)d - %(message)s', level=logging.DEBUG)
 
+# linux使用GPU时，控制使用的显卡，为空则不使用GPU
+os.environ["CUDA_VISIBLE_DEVICES"] = '1'
 
 def parse_args(check=True):
     parser = argparse.ArgumentParser()
@@ -312,6 +314,7 @@ with sess:
 
         gs, _ = sess.run([global_step, train_step], feed_dict=feed_dict_to_use)
         if gs % 10 == 0:
+            logging.debug("step {0} ".format(gs))
             gs, loss, summary_string = sess.run([global_step, cross_entropy_loss, merged_summary_op], feed_dict=feed_dict_to_use)
             logging.debug("step {0} Current Loss: {1} ".format(gs, loss))
             end = time.time()

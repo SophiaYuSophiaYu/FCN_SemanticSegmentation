@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a5218ea-078a-4265-b26a-fae8042eb3d1" name="Default" comment="" />
+    <list default="true" id="7a5218ea-078a-4265-b26a-fae8042eb3d1" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/quiz-w9-code.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/quiz-w9-code.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FCN心得体会.md" beforeDir="false" afterPath="$PROJECT_DIR$/FCN心得体会.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_FCN8x.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_FCN8x.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,10 +32,22 @@
       <file leaf-file-name="train_FCN8x.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/train_FCN8x.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3406">
-              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+            <state relative-caret-position="268">
+              <caret line="322" lean-forward="true" selection-start-line="322" selection-end-line="322" />
               <folding>
                 <element signature="e#47#62#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dataset.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataset.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="67">
+              <caret line="35" column="19" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="19" />
+              <folding>
+                <element signature="e#48#112#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -52,6 +70,9 @@
       <find>dict_to_tf_example</find>
       <find>image_to_tfexample</find>
       <find>SerializeToString</find>
+      <find>dataset_val</find>
+      <find>eval</find>
+      <find>Model saved</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -94,8 +115,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/train_FCN8x.py" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -108,6 +129,26 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="train-fcn-8x" type="PythonConfigurationType" factoryName="Python">
+      <module name="quiz-w9-code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train_FCN8x.py" />
+      <option name="PARAMETERS" value="--checkpoint_path C:\Users\YuRong\jupyter\AIWork\Week10\vgg_16.ckpt --output_dir C:\Users\YuRong\jupyter\AIWork\Week10\output --dataset_train C:\Users\YuRong\jupyter\AIWork\Week10\fcn_train.record --dataset_val C:\Users\YuRong\jupyter\AIWork\Week10\fcn_val.record --batch_size 8" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -124,17 +165,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17782739" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17782739" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.12892562" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.23636363" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -149,7 +191,19 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/train_FCN8x.py</url>
+          <line>316</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/train_FCN8x.py</url>
+          <line>319</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -233,9 +287,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -250,6 +301,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="35" column="19" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="19" />
+          <folding>
+            <element signature="e#48#112#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/train.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -260,10 +321,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://E:/01人工智能学习/课件/第10周/fcn_example.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2668">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AI实战/书法汉字图片识别/HandwrittenreCognition/export_inference_graph_offline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/train_FCN8x.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3406">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        <state relative-caret-position="268">
+          <caret line="322" lean-forward="true" selection-start-line="322" selection-end-line="322" />
           <folding>
             <element signature="e#47#62#0" expanded="true" />
           </folding>
