@@ -311,18 +311,17 @@ with sess:
 
         gs, _ = sess.run([global_step, train_step], feed_dict=feed_dict_to_use)
         if gs % 10 == 0:
-            logging.debug("step {0} ".format(gs))
             gs, loss, summary_string = sess.run([global_step, cross_entropy_loss, merged_summary_op], feed_dict=feed_dict_to_use)
+            # 使用GPU运行时，上行代码执行后gs会+1，导致后续if无法通过
+            if gs % 10 != 0 and gs >= 10:
+                # logging.debug("gs error {0} ".format(gs))
+                gs -= gs % 10
             logging.debug("step {0} Current Loss: {1} ".format(gs, loss))
             end = time.time()
             logging.debug("[{0:.2f}] imgs/s".format(10 * batch_size / (end - start)))
             start = end
 
             summary_string_writer.add_summary(summary_string, i)
-
-            if gs % 10 != 0 and gs >= 10:
-                logging.debug("gs error {0} ".format(gs))
-                gs -= gs % 10
 
             if gs % 100 == 0:
                 save_path = saver.save(sess, os.path.join(log_folder, "model.ckpt"), global_step=gs)
